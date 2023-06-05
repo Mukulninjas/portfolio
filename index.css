@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
 
-root {
-
-    /* --background-color:{color:#f3f5f8} */
-    --background-color: {
-        color: #f00
-    }
+:root {
+    --background-color: rgb(248, 247, 247);
+    --logo-size: 40px;
+    --font-color: #3d535f;
+    --accent-color: #7f00ff;
 }
 
 * {
@@ -27,6 +26,15 @@ b {
 }
 
 /* ------------------------------Navbar----------------------------------- */
+.logo {
+    font-size: var(--logo-size);
+    font-weight: 800;
+    color: var(--font-color);
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
 nav {
     display: flex;
     width: 100%;
@@ -34,86 +42,38 @@ nav {
     height: 80px;
     line-height: 80px;
     z-index: 111;
-    /* background-color: rgb(248, 247, 247); */
     background-color: var(--background-color);
     padding: 0 3rem;
 }
 
-.logo {
+.navItems,
+.smallNavItems {
     display: flex;
-    font-size: 40px;
-    font-weight: 800;
-    color: #3d535f;
-    letter-spacing: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
+    align-items: center;
 }
 
-.navItems {
-    display: flex;
-}
-
-.navItems li {
+.navItems li,
+.smallNavItems li {
     list-style: none;
     margin: 0 15px;
 }
 
-.navItems li a {
+.navItems li a,
+.smallNavItems li a {
     font-size: 25px;
-    color: #3d535f;
+    color: var(--font-color);
     letter-spacing: 3px;
     text-decoration: none;
     text-transform: capitalize;
-}
-
-.links {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    z-index: 2;
-    /* background-color: #212337; */
-    background-color: var(--background-color);
-    border-radius: 0px 15px 15px 0px;
-    padding: 15px 5px;
-    margin: 13% 0%;
-}
-
-.navItems li a:hover,
-.links a:hover {
-    color: #7f00ff;
-    font-weight: 600;
-    position: relative;
-    left: 5px;
-    top: 5px;
-}
-
-.links a {
-    font-size: 30px;
-    color: #3d535f;
-    padding: 0px 10px;
-
 }
 
 .smallNavItems {
     display: none;
 }
 
-.smallNavItems li {
-    list-style: none;
-    margin: 0 15px;
-}
-
-.smallNavItems li a {
-    font-size: 25px;
-    color: #3d535f;
-    letter-spacing: 3px;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-
-.smallNavItems li a:hover,
-.links a:hover {
-    color: #7f00ff;
+.navItems li a:hover,
+.smallNavItems li a:hover {
+    color: var(--accent-color);
     font-weight: 600;
     position: relative;
     left: 5px;
@@ -125,6 +85,11 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+    :root {
+        --logo-size: 30px;
+    }
+
     .navItems {
         display: none;
     }
@@ -134,31 +99,24 @@ nav {
     }
 
     .smallNavItems {
-        display: flex;
+        display: none;
         flex-direction: column;
-        z-index: 1;
-        float: right;
-        /* margin: -24px; */
-        background-color: #e9e9e9cc;
-        position: relative;
+        z-index: 6;
+        background-color: #e9e9e9;
+        position: absolute;
         top: 70px;
-        width: 30rem;
+        right: 20px;
+        width: 80vw;
         align-items: center;
-        height: 13rem;
-        justify-content: center;
+        height: 12rem;
         border-radius: 20px;
-    }
-
-    nav {
-        height: fit-content;
-        max-height: 300px;
     }
 
     .smallNavItems li {
         height: 35px;
     }
 
-    .smallNavItems ul li Button {
+    .smallNavItems li a {
         display: block;
         height: 35px;
     }

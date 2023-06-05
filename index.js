@@ -119,6 +119,8 @@ function deleteText() {
 
 typeWriter();
 
+/////////////////////////////////Navbar Toggle//////////////////////////////////////////////
+
 var smallNavItems = document.querySelector(".smallNavItems")
 document.querySelector(".fa-bars").addEventListener('click', () => {
     if (smallNavItems.style.display === "none") {
