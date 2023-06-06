@@ -1,87 +1,124 @@
-const wrapper = document.querySelector(".Project-Wrapper");
-const carousel = document.querySelector(".carousel");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+///////////////////////////////// Project Section ///////////////////////////////
+const projects = [
+    {
+        title: 'Portfolio Website',
+        subtitle: 'A website to showcase my Skills',
+        img_url: 'Assets/Portfolio-Image.png',
+        source_code: 'https://github.com/Mukulninjas/portfolio',
+        live: 'https://mukulninjas.github.io/portfolio/#project'
+    },
+    {
+        title: 'IT Ticketing',
+        subtitle: 'Ticketing app to handle IT support workload',
+        img_url: 'Assets/Ticketing-Image.png',
+        source_code: 'https://bitbucket.org/WittyIT/witty-ticketing/src/master/v',
+        live: 'https://mukulninjas.github.io/portfolio/#project'
+    },
+    {
+        title: 'Sorting Visualizer',
+        subtitle: 'Visualization of different sorting algorithm',
+        img_url: 'Assets/Algo-Visualizer.png',
+        source_code: 'https://github.com/Mukulninjas/sorting-algo',
+        live: 'https://mukulninjas.github.io/sorting-algo/'
+    }
+];
+
+var ulElement = document.querySelector('.Project-Carousel');
+for (var j = 0; j < projects.length; j++) {
+    var project = projects[j];
+    var liElement = document.createElement('li');
+    liElement.classList.add('Project-Card');
+    liElement.classList.add('card');
+    var html = `<div class="img"><img src="${project.img_url}" alt="${project.title}"/></div><div class="project-info"><h2>${project.title}</h2><p>${project.subtitle}</p><div class="project-links"><a class="Source-Code button" href="${project.source_code}">Source Code</a><a class="Live-Demo button" href="${project.live}">Live Demo</a></div></div>`;
+    liElement.innerHTML = html;
+    ulElement.appendChild(liElement);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+const projectWrapper = document.querySelector(".Project-Wrapper");
+const projectCarousel = document.querySelector(".Project-Carousel");
+const firstCardWidth = projectCarousel.querySelector(".Project-Card").offsetWidth;
 const arrowBtns = document.querySelectorAll(".Project-Wrapper i");
-const carouselChildrens = [...carousel.children];
+const carouselChildrens = [...projectCarousel.children];
 
 let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 
 // Get the number of cards that can fit in the carousel at once
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+let cardPerView = Math.round(projectCarousel.offsetWidth / firstCardWidth);
 
 // Insert copies of the last few cards to beginning of carousel for infinite scrolling
 carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    projectCarousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
 // Insert copies of the first few cards to end of carousel for infinite scrolling
 carouselChildrens.slice(0, cardPerView).forEach(card => {
-    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+    projectCarousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
 
 // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
-carousel.classList.add("no-transition");
-carousel.scrollLeft = carousel.offsetWidth;
-carousel.classList.remove("no-transition");
+projectCarousel.classList.add("no-transition");
+projectCarousel.scrollLeft = projectCarousel.offsetWidth;
+projectCarousel.classList.remove("no-transition");
 
 // Add event listeners for the arrow buttons to scroll the carousel left and right
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+        projectCarousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
     });
 });
 
 const dragStart = (e) => {
     isDragging = true;
-    carousel.classList.add("dragging");
+    projectCarousel.classList.add("dragging");
     // Records the initial cursor and scroll position of the carousel
     startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
+    startScrollLeft = projectCarousel.scrollLeft;
 }
 
 const dragging = (e) => {
     if (!isDragging) return; // if isDragging is false return from here
     // Updates the scroll position of the carousel based on the cursor movement
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    projectCarousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
 
 const dragStop = () => {
     isDragging = false;
-    carousel.classList.remove("dragging");
+    projectCarousel.classList.remove("dragging");
 }
 
 const infiniteScroll = () => {
     // If the carousel is at the beginning, scroll to the end
-    if (carousel.scrollLeft === 0) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        carousel.classList.remove("no-transition");
+    if (projectCarousel.scrollLeft === 0) {
+        projectCarousel.classList.add("no-transition");
+        projectCarousel.scrollLeft = projectCarousel.scrollWidth - (2 * projectCarousel.offsetWidth);
+        projectCarousel.classList.remove("no-transition");
     }
     // If the carousel is at the end, scroll to the beginning
-    else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("no-transition");
+    else if (Math.ceil(projectCarousel.scrollLeft) === projectCarousel.scrollWidth - projectCarousel.offsetWidth) {
+        projectCarousel.classList.add("no-transition");
+        projectCarousel.scrollLeft = projectCarousel.offsetWidth;
+        projectCarousel.classList.remove("no-transition");
     }
 
     // Clear existing timeout & start autoplay if mouse is not hovering over carousel
     clearTimeout(timeoutId);
-    if (!wrapper.matches(":hover")) autoPlay();
+    if (!projectWrapper.matches(":hover")) autoPlay();
 }
 
 const autoPlay = () => {
     if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
     // Autoplay the carousel after every 2500 ms
-    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+    timeoutId = setTimeout(() => projectCarousel.scrollLeft += firstCardWidth, 2500);
 }
 autoPlay();
 
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
+projectCarousel.addEventListener("mousedown", dragStart);
+projectCarousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
-wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-wrapper.addEventListener("mouseleave", autoPlay);
+projectCarousel.addEventListener("scroll", infiniteScroll);
+projectWrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+projectWrapper.addEventListener("mouseleave", autoPlay);
 
 
 //////////////////////////TypeWriter Effect////////////////////////////
@@ -129,84 +166,3 @@ document.querySelector(".fa-bars").addEventListener('click', () => {
         smallNavItems.style.display = "none";
     }
 })
-
-
-///////////////////////////////// Project Section ///////////////////////////////
-const projects = [
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Ecommerce Website',
-        subtitle: 'A website to shop all your needs',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Algorithm Visualizer',
-        subtitle: 'Visually showcase how an algorithm works',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        subtitle: 'A website to showcase my Skills',
-        img_url: '#',
-        source_code: '#',
-        live: '#'
-    }
-];
-
-
-projects.forEach(projects => {
-    const html = `
-            <li class="card">
-            <div class="img"><img src="Assets/html-5.png" alt="img" draggable="false"></div>
-            <h2>Portfolio website</h2>
-            <button>Source Code</button>
-            <button>Live</button>
-            </li>
-    `;
-    carousel.insertAdjacentHTML('beforeend', html);
-});

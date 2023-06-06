@@ -24,6 +24,8 @@ html {
 
 body {
     width: 100vw;
+    /* margin: 0;
+    padding: 0; */
     overflow-x: hidden !important;
 }
 
@@ -414,8 +416,8 @@ p {
     .Bio-Inner-Container {
         flex-direction: column;
     }
-    
-    .Bio-Container{
+
+    .Bio-Container {
         padding: 0 2rem;
     }
 }
@@ -660,6 +662,35 @@ Button {
 .carousel .card span {
     color: #6A6D78;
     font-size: 1.31rem;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-links a {
+    all: unset;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 200;
+    color: #fff;
+    background-color: #3d535f;
+    padding: 5px 5px;
+    margin: 0px 5px;
+    text-transform: capitalize;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+
+.project-info {
+    width: 90%;
+}
+
+.project-info p {
+    color: #fffa;
 }
 
 @media screen and (max-width: 900px) {
