@@ -23,7 +23,8 @@ html {
 }
 
 body {
-    overflow-x: hidden;
+    width: 100vw;
+    overflow-x: hidden !important;
 }
 
 .container {
@@ -401,7 +402,6 @@ p {
     justify-content: space-evenly;
     padding: 0 5rem;
     background-color: var(--background-color);
-    height: 100vh;
     color: white;
 }
 
@@ -413,6 +413,9 @@ p {
 @media (max-width: 767px) {
     .Bio-Inner-Container {
         flex-direction: column;
+    }
+    
+    .Bio-Container{
         padding: 0 2rem;
     }
 }
@@ -590,7 +593,7 @@ Button {
     scrollbar-width: none;
 }
 
-.About-Container .Project-Wrapper .carousel {
+.About-Container .About-Wrapper .carousel {
     grid-auto-columns: calc((100%) - 12px);
 }
 
@@ -717,7 +720,7 @@ Button {
 }
 
 #typewriter {
-    font-size: 3.2rem;
+    font-size: 2rem;
     color: #7f00ff;
     text-transform: capitalize;
     text-align: center;
