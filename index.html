@@ -165,25 +165,7 @@
       </div>
       <div class="Project-Wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
-        <ul class="carousel">
-          <li class="card">
-            <div class="img"><img src="Assets/html-5.png" alt="img" draggable="false"></div>
-            <h2>Portfolio website</h2>
-            <button>Source Code</button>
-            <button>Live</button>
-          </li>
-          <li class="card">
-            <div class="img"><img src="Assets/git.png" alt="img" draggable="false"></div>
-            <h2>Ecommerce website</h2>
-            <button>Source Code</button>
-            <button>Live</button>
-          </li>
-          <li class="card">
-            <div class="img"><img src="Assets/MongoDB_SlateBlue.png" alt="img" draggable="false"></div>
-            <h2>Ecommerce website</h2>
-            <button>Source Code</button>
-            <button>Live</button>
-          </li>
+        <ul class="Project-Carousel carousel">
         </ul>
         <i id="right" class="fa-solid fa-angle-right"></i>
       </div>
@@ -203,110 +185,5 @@
       </div>
     </section>
   </div>
-  <!-- 
-<script>
-    const projects = [
-        {
-          title: 'Project 1',
-          subtitle: 'subtitle for project 1 goes here.'
-        },
-        {
-          title: 'Project 2',
-          subtitle: 'subtitle for project 2 goes here.'
-        },
-        {
-          title: 'Project 3',
-          subtitle: 'subtitle for project 3 goes here.'
-        },
-        {
-        title: 'Project 4',
-        subtitle: 'subtitle for project 4 goes here.'
-      },
-      {
-        title: 'Project 5',
-        subtitle: 'subtitle for project 5 goes here.'
-      },
-      {
-        title: 'Project 6',
-        subtitle: 'subtitle for project 6 goes here.'
-      }, {
-        title: 'Project 7',
-        subtitle: 'subtitle for project 7 goes here.'
-      },
-      {
-        title: 'Project 8',
-        subtitle: 'subtitle for project 8 goes here.'
-      },
-      {
-        title: 'Project 9',
-        subtitle: 'subtitle for project 9 goes here.'
-      }
-      ];
-
-        const container = document.getElementById('containerProject');
-          projects.forEach(projects => {
-            const html = `
-            <div  class="Project-Container">
-      <div class="ProjectImage">
-                <img src="Assets/Mukul.png" alt="Project Image" style=" border-radius: 20px" />
-              </div>
-              <div class="Project-Title">${projects.title}</div>
-              <div>${projects.subtitle}</div>
-              <div class="Project-Buttons">
-                <div class="ButtonLive">
-                  <button>Live Preview</button>
-                </div>
-                <div class="ButtonCode">
-                  <button>Source Code</button>
-                </div>
-              </div>
-              </div>
-    `;
-            container.insertAdjacentHTML('beforeend', html);
-          });
-
-          const blocks = document.querySelectorAll('.block');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            let currentSlide = 0;
-
-            showSlide(currentSlide);
-
-            prevBtn.addEventListener('click', () => {
-              currentSlide -= 3;
-              showSlide(currentSlide);
-            });
-
-            nextBtn.addEventListener('click', () => {
-              currentSlide += 3;
-              showSlide(currentSlide);
-            });
-
-            function showSlide(slideIndex) {
-              blocks.forEach(block => {
-                block.style.display = 'none';
-              });
-
-              for (let i = slideIndex; i < slideIndex + 3; i++) {
-                if (blocks[i]) {
-                  blocks[i].style.display = 'block';
-                }
-              }
-
-              if (slideIndex === 0) {
-                prevBtn.disabled = true;
-              } else {
-                prevBtn.disabled = false;
-              }
-
-              if (slideIndex + 3 >= blocks.length) {
-                nextBtn.disabled = true;
-              } else {
-                nextBtn.disabled = false;
-              }
-            }
-</script> -->
-
 </body>
-
 </html>
