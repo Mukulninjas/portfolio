@@ -635,7 +635,7 @@ Button {
 }
 
 .About-Container .carousel .card {
-    height: 500px;
+    height: 70vh;
 }
 
 .carousel .card .img {
@@ -661,12 +661,8 @@ Button {
 
 .About-Card-Holder h2{
     text-align: center;
-    font-size: 2.5rem !important;
+    font-size: 2vh !important;
     font-weight: 600 !important;
-}
-
-.Organization{
-
 }
 
 .carousel .card h2 {
@@ -677,7 +673,11 @@ Button {
 
 .carousel .card span {
     color:#f7f7f7;
-    font-size: 1.31rem;
+    font-size: 1.5vh;
+}
+
+a{
+    all:unset;
 }
 
 .project-links {
@@ -713,6 +713,10 @@ Button {
     color: #ababab;
 }
 
+.About-Card-Holder ul li{
+    font-size: 1.3vh !important;
+}
+
 .Designation{
     display: inline;
 }
@@ -723,7 +727,7 @@ Button {
 }
 
 .Responsibilites{
-    margin-top: 5vh;
+    margin-top: 2vh;
 }
 
 .Course, .Duration{
