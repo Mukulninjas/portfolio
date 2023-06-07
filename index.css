@@ -16,14 +16,15 @@
 
 html {
     font-size: 16px;
-
+    width: 100vw;
+    overflow-x: hidden;
     @media (width<=468px) {
         font-size: 80%;
     }
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     /* margin: 0;
     padding: 0; */
     overflow-x: hidden !important;
@@ -99,7 +100,7 @@ nav {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (width<= 768px) {
 
     :root {
         --logo-size: 30px;
@@ -451,7 +452,6 @@ p {
     display: flex;
     height: 100vh;
 }
-
 /* ------------------------------------------------------------------------------------- */
 
 .Project-Container {
@@ -653,6 +653,22 @@ Button {
     /* border: 4px solid #fff; */
 }
 
+.About-Card-Holder {
+    width: 100%;
+    height: 100%;
+    padding: 10px 5vw;
+}
+
+.About-Card-Holder h2{
+    text-align: center;
+    font-size: 2.5rem !important;
+    font-weight: 600 !important;
+}
+
+.Organization{
+
+}
+
 .carousel .card h2 {
     font-weight: 500;
     font-size: 1.56rem;
@@ -660,7 +676,7 @@ Button {
 }
 
 .carousel .card span {
-    color: #6A6D78;
+    color:#f7f7f7;
     font-size: 1.31rem;
 }
 
@@ -691,6 +707,27 @@ Button {
 
 .project-info p {
     color: #fffa;
+}
+
+.About-Card-Holder ul{
+    color: #ababab;
+}
+
+.Designation{
+    display: inline;
+}
+
+.Experience{
+    display: inline;
+    margin-left: 10px;
+}
+
+.Responsibilites{
+    margin-top: 5vh;
+}
+
+.Course, .Duration{
+    color: #ababab;
 }
 
 @media screen and (max-width: 900px) {
