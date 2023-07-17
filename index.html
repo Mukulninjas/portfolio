@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -16,48 +15,47 @@
 
 <body>
   <div class="container">
-    <nav>
-      <div id="home" class="logo">Folio <b>.</b></div>
-      <ul class="navItems">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#project">Project</a></li>
-        <!-- <li><Button>Theme</Button></li> -->
-      </ul>
-      <ul class="smallNavItems">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#project">Project</a></li>
-        <!-- <li><Button>Theme</Button></li> -->
-      </ul>
-      <div class="Toggle-Bars"><i class="fa-solid fa-bars"></i></div>
-    </nav>
 
-    <div class="wrapper">
-      <div class="cols">
-        <div class="imgbox">
-          <img src="Assets/Mukul.png" height="300px">
+    <div class="heroContainer">
+
+      <nav>
+        <div id="home" class="logo">Folio <b>.</b></div>
+        <ul class="navItems">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#bio">Bio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <!-- <li><Button>Theme</Button></li> -->
+        </ul>
+      </nav>
+
+      <div class="wrapper">
+        <div class="cols">
+          <div class="imgbox">
+            <img src="Assets/Mukul.png">
+          </div>
+          <div class="heroTextContainer">
+            <span class="topline">Hello</span>
+            <h1>I'm <span class="multitext" id="typewriter"></span></h1>
+            <p>Software Engineering graduate and a Coding Enthusiast with strong technical skills anchored
+              on
+              extensive engineering coursework and a special focus on Full Stack Web Development. Let's
+              create something
+              extraordinary together!</p>
+            <div class="btns">
+              <button class="button"><a
+                  href="https://drive.google.com/file/d/19uWjImRV4P4tfPLPZxIMVeG5WQUDpE19/view?usp=drivesdk"
+                  download>Download CV</a></button>
+              <!-- <button class="button">Hire Me</button> -->
+            </div>
+            <section class="links">
+              <a href="https://www.linkedin.com/in/mukul-kumar-31a2a71b0/"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/Mukulninjas"><i class="fab fa-github-square"></i></a>
+              <a href="mailto:mukulninjas@gmail.com"><i class="fa fa-envelope"></i></a>
+              <a href="tel:9582688985"><i class="fa fa-phone"></i></a>
+            </section>
+          </div>
         </div>
-        <span class="topline">Hello</span>
-        <h1 style="font-size: 2rem;">I'm <span class="multitext" id="typewriter"></span></h1>
-        <p>Software Engineering graduate and a Coding Enthusiast with strong technical skills anchored on
-          extensive engineering coursework and a special focus on Full Stack Web Development. Let's create something extraordinary together!</p>
-        <div class="btns">
-          <button class="button"><a href="https://drive.google.com/file/d/1yuHTpYWm5zsZ47Hntd2FYt7y5yD0H_Nd/view" download>Download CV</a></button>
-          <button class="button">Hire Me</button>
-        </div>
-        <section class="links">
-          <a href="https://www.linkedin.com/in/mukul-kumar-31a2a71b0/"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/Mukulninjas"><i class="fab fa-github-square"></i></a>
-          <a href="mailto:mukulninjas@gmail.com"><i class="fa fa-envelope"></i></a>
-          <a href="tel:9582688985"><i class="fa fa-phone"></i></a>
-        </section>
-      </div>
-      <div class="ocean">
-        <div class="wave"></div>
-        <div class="wave"></div>
       </div>
     </div>
 
@@ -70,9 +68,9 @@
       <img class="movingImages" src="Assets/git.png" />
     </section>
 
-    <div id="about" class="Bio-Container" tabIndex="0">
-      <div class="Projects-Heading-Container">
-        <div class="Projects-Heading">Bio</div>
+    <div id="bio" class="Bio-Container" tabIndex="0">
+      <div class="Heading-Container Center-Content">
+        <div class="Heading">Bio</div>
       </div>
       <div class="Bio-Inner-Container">
         <div class="Bio-Left">
@@ -90,96 +88,55 @@
           </div>
         </div>
         <div class="Bio-Right">
-          "As a Software Developer with 1.5 years of industry experience in MERN Stack development, specializing in healthcare and
-          payment provider web applications. I have honed my skills of HTML5, CSS3, JavaScript, ReactJS, NodeJS, ExpressJS, and
-          MongoDB.<br/>
-          &emsp; Passionate about creating robust and user-friendly web applications, I thrive in collaborative environments where I can
-          contribute my technical expertise and problem-solving abilities.With this I am dedicated to creating efficient and
-          scalable solutions.<br/>
-          &emsp; My wrok experience has provided me with a deep understanding of industry best practices, compliance standards, and data
-          security. I am constantly staying updated with the latest technologies and trends in web development to ensure the
+          "As a Software Developer with 1.5 years of industry experience in MERN Stack development,
+          specializing in
+          healthcare and
+          payment provider web applications. I have honed my skills of HTML5, CSS3, JavaScript, ReactJS,
+          NodeJS,
+          ExpressJS, and
+          MongoDB.<br />
+          &emsp; Passionate about creating robust and user-friendly web applications, I thrive in
+          collaborative
+          environments where I can
+          contribute my technical expertise and problem-solving abilities.With this I am dedicated to creating
+          efficient
+          and
+          scalable solutions.<br />
+          &emsp; My wrok experience has provided me with a deep understanding of industry best practices,
+          compliance
+          standards, and data
+          security. I am constantly staying updated with the latest technologies and trends in web development
+          to
+          ensure
+          the
           applications I build are modern, intuitive, and meet the evolving needs of users."
         </div>
       </div>
     </div>
 
-    <section class="About-Container">
-      <div class="About-Heading-Container">
-        <div class="About-Heading">About</div>
+    <div id="about" class="About-Container">
+      <div class="Heading-Container Center-Content">
+        <div class="Heading">Experience</div>
       </div>
-      <div class="About-Wrapper">
-        <i id="left" class="fa-solid fa-angle-left"></i>
-        <ul class="About-Carousel carousel">
-          <li class="About-Card card">
-            <div class="About-Card-Holder">
-              <h2>Work Experience</h2>
-              <span class="Organization">WittyBrains Software Pvt. Technologies</span>
-              <ul>
-                <li>
-                  <div class="Designation">Software Trainee</div>
-                  <div class="Experience">Feb. 2022 - July 2022</div>
-                </li>
-                <li>
-                  <div class="Designation">Software Engineer</div>
-                  <div class="Experience">July 2022 - Present</div>
-                </li>
-              </ul>
-              <span>
-                <div class="Responsibilites">Responsibilites:</div>
-              </span>
-              <ul>
-                <li>Developed and maintained web applications using the MERN (MongoDB, ExpressJS, ReactJS, NodeJS) stack.</li>
-                <li>Collaborated with cross-functional teams including designers and product managers to define project requirements and
-                scope.</li>
-                <li>Ensured code quality and maintainability through unit testing and code reviews, following industry-standard best
-                practices.</li>
-                <li>Participated in Agile development processes, including daily stand-ups, sprint planning, and retrospectives.</li>
-                <li>Actively contributed to team discussions and provided technical guidance to junior developers.</li>
-                <li>Worked on healthcare and payment provider web applications, adhering to industry regulations and ensuring data security
-                and privacy.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="About-Card card">
-            <div class="About-Card-Holder">
-              <h2>Education</h2>
-              <span>Ajay Kumar Garg Engineering College Ghaziabad</span>
-              <div class="Course">B.Tech (Computer Science and Engineering)</div>
-              <div class="Duration">July. 2018 - July 2022</div>
-              <span><div class="Responsibilites">Responsibilites:</div></span>
-              <ul>
-                <li>Engaged in independent research and self-learning to expand knowledge beyond the curriculum, demonstrating a proactive
-                and self-driven approach to education.</li>
-                <li>Actively contributed to class discussions, sharing insights and perspectives to create an engaging and dynamic learning
-                environment.</li>
-                <li>Demonstrated a strong work ethic and dedication to learning, consistently maintaining a high level of academic
-                achievement.</li>
-                <li>Participated in various inter school Hackathons, Coding Competitions and was an active member of Computer Society.</li>
-                <li>Engaged in extracurricular activities and student organizations to develop leadership, teamwork, and interpersonal
-                skills.</li>
-              </ul>
-          </li>
-          <li class="About-Card card">
-            <div class="About-Card-Holder">
-              <h2>Skills</h2>
-              <ul>
-                <img class="movingImages" src="Assets/html-5.png" />
-                <img class="movingImages" src="Assets/css.png" />
-                <img class="movingImages" src="Assets/js.png" />
-                <img class="movingImages" src="Assets/structure.png" />
-                <img class="movingImages" src="Assets/nodejs.png" />
-                <img class="movingImages" src="Assets/git.png" />
-              </ul>
-            </div>
+      <div class="Work-Experience">
+        <div class="Organization">Wittybrains Software Pvt. Ltd.</div>
+        <div class="Experience-Time">02-2022 - Present</div>
+        <ul class="Responsibilites">
+          <li>Experience on building extensive web application in the
+            domain of Healthcare and Payment Providers</li>
+          <li>Collaborated with cross-functional teams including
+            designers and product managers to define project
+            requirements and scope</li>
+          <li>Ensured code quality and maintainability through unit
+            testing and code reviews, following industry-standard best
           </li>
         </ul>
-        <i id="right" class="fa-solid fa-angle-right"></i>
       </div>
-    </section>
+    </div>
 
     <div id="project" class="Projects-Container" id="Projects-Focus" tabIndex="0">
-      <div class="Projects-Heading-Container">
-        <div class="Projects-Heading">Projects</div>
+      <div class="Heading-Container">
+        <div class="Heading">Projects</div>
       </div>
       <div class="Project-Wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
@@ -202,6 +159,7 @@
         <div>©️ Copyright 2022, All Rights Reserved</div>
       </div>
     </section>
+
   </div>
 </body>
 
